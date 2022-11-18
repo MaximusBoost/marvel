@@ -11,7 +11,7 @@ class GetDataApi {
             const response = await axios.get(url, {
                 params: {
                     apikey:API_KEY,
-                    limit: 100
+                    limit: 8
                 },
             });
     

@@ -1,12 +1,6 @@
-import 'regenerator-runtime/runtime'
-
-import axios from "axios";
-
-import {API_URL, URL_COMICS} from './constants/api.js';
-import {getDataApi} from './utils/getDataApi';
+import 'regenerator-runtime/runtime';
+import App from './components/App';
 
 (async () => {
-
-    const data = await getDataApi.getData(API_URL + URL_COMICS);
-    console.log(data);
+    await App.render();
 })();
