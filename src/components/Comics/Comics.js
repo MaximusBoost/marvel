@@ -2,7 +2,8 @@ import {API_URL, URL_COMICS, IMG_STANDART_XLARGE, IMG_NOT_AVAILABLE, URL_CHARACT
 import {getDataApi} from '../../utils/getDataApi';
 import { ROOT_INDEX } from '../../constants/root.js';
 
-import './Comics.css'
+import classes from './Comics.css';
+
 
 class Comics {
 
@@ -20,9 +21,9 @@ class Comics {
                 const imgSrc = path + '/' + IMG_STANDART_XLARGE + '.' + extension;
 
                 htmlContent += `
-                <li class="comics__item" data-uri="${uri}">
-                    <span class="comics__name">${title}</span>
-                    <img class="comics__img" src ="${imgSrc}" />
+                <li class="comics__item ${classes.comics__item}" data-uri="${uri}">
+                    <span class="${classes.comics__name}">${title}</span>
+                    <img class="img-contain ${classes.comics__img}" src ="${imgSrc}" />
                 </li>
             `;
             };
@@ -30,7 +31,7 @@ class Comics {
         } );
 
         const htmlWrapper = `
-            <ul class="comics__container">
+            <ul class="${classes.comics__container}">
                 ${htmlContent}
             </ul>
         `;
